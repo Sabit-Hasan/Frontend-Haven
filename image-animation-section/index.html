@@ -1,0 +1,163 @@
+<style>
+body {
+  align-items: center;
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 2em;
+  max-width: 400px;
+}
+
+.button {
+  background-color: #333;
+  border-radius: 8px;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* HERO LAYOUT */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: 90vw;
+  width: 100%;
+}
+
+/* IMAGE SLIDER CONTAINER */
+.hero-images {
+  background: white;
+  border-radius: 12px;
+  flex-shrink: 0;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  width: 400px;
+}
+
+.hero-images img {
+  border-radius: 12px;
+  height: 600px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 400px;
+}
+
+/* Image animations */
+.hero-images img:nth-child(1) {
+  animation: image1 13s infinite;
+  z-index: 10;
+}
+.hero-images img:nth-child(2) {
+  animation: image2 13s infinite;
+  z-index: 9;
+}
+.hero-images img:nth-child(3) {
+  animation: image3 13s infinite;
+  z-index: 8;
+}
+
+/* ----------------- KEYFRAMES (unchanged) ----------------- */
+@keyframes image1 {
+  0% { transform: scale(1); }
+  10% { transform: scale(1); }
+  20% { transform: scale(0.3); }
+  30% { transform: scale(0.3) translate(-50%, -25%); }
+  35% { opacity: 1; transform: scale(0.5) translate(-220%, 0%); }
+  36% { opacity: 0; }
+  90% { opacity: 0; transform: scale(1); }
+  95% { opacity: 0.5; transform: scale(0.3); }
+  100% { opacity: 1; transform: scale(1) translate(0%, 0%); }
+}
+
+@keyframes image2 {
+  0% { transform: scale(1); }
+  10% { transform: scale(1); }
+  20% { transform: scale(0.3); }
+  30% { transform: scale(0.3) translate(0%, 0%); }
+  35% { transform: scale(1) translate(0%, 0%); }
+  55% { transform: scale(1) translate(0%, 0%); }
+  60% { transform: scale(0.3); }
+  65% { transform: scale(0.3); }
+  70% { transform: scale(0.3) translate(-250%, 0%); }
+  100% { transform: scale(0.3) translate(-250%, 0%); }
+}
+
+@keyframes image3 {
+  0% { opacity: 1; transform: scale(1); }
+  10% { transform: scale(1); }
+  20% { transform: scale(0.3); }
+  30% { transform: scale(0.3) translate(50%, 25%); }
+  35% { height: 600px; transform: scale(0.5) translate(200%, 0%); }
+  55% { height: 300px; transform: scale(0.5) translate(200%, 0%); }
+  60% { transform: scale(0.6) translate(100px, 0%); }
+  65% { height: 300px; transform: scale(0.6) translate(100px, 0%); }
+  70% { height: 600px; transform: scale(1) translate(0%, 0%); }
+  90% { opacity: 1; transform: scale(1) translate(0%, 0%); }
+  95% { opacity: 0.5; transform: scale(0.3); }
+  100% { opacity: 0; transform: scale(1) translate(0%, 0%); }
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 992px) {
+  h1 {
+    font-size: 36px;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-images {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+  }
+  .hero-images img {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+  }
+  p {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+</style>
+
+<div class="hero">
+  <div>
+    <h1 class="hero-title">Compelling. Headline.</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+    <a href="#" class="button">Learn more</a>
+  </div>
+  <div class="hero-images">
+    <img src="https://picsum.photos/1080/1920?random&1" alt="">
+    <img src="https://picsum.photos/1080/1920?random&2" alt="">
+    <img src="https://picsum.photos/1080/1920?random&3" alt="">
+  </div>
+</div>
